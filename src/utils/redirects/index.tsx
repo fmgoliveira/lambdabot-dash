@@ -4,7 +4,8 @@ export const Invite = ({ guildId, redirectUrl }: { guildId?: string, redirectUrl
   if (guildId && guildId !== "") {
     if (redirectUrl && redirectUrl !== "") switch (redirectUrl) {
       case "api_invite":
-        window.location.replace(`https://discord.com/oauth2/authorize?client_id=900398063607242762&permissions=1118741982327&redirect_uri=${encodeURIComponent(`${process.env.ENV === 'production' ? "https://bot-api.lambdadev.xyz" : "http://localhost:3001"}/api/invite/redirect`)}&response_type=code&scope=bot%20applications.commands&guild_id=${guildId}`)
+        window.location.replace(`https://discord.com/oauth2/authorize?client_id=900398063607242762&permissions=1118741982327&redirect_uri=${encodeURIComponent(`${"https://bot-api.lambdadev.xyz"}/api/invite/redirect`)
+          }& response_type=code & scope=bot % 20applications.commands & guild_id=${guildId} `)
         break
     }
     else window.location.replace(`https://discord.com/oauth2/authorize?client_id=900398063607242762&permissions=1118741982327&redirect_uri=https%3A%2F%2Fdiscord.gg%2FzqBF8Wv5Pg&response_type=code&scope=bot%20applications.commands&guild_id=${guildId}`)
@@ -38,12 +39,12 @@ export const Policy = () => {
 }
 
 export const Login = () => {
-  window.location.replace(`${process.env.ENV === 'production' ? "https://bot-api.lambdadev.xyz" : "http://localhost:3001"}/api/auth/login`)
+  window.location.replace(`${"https://bot-api.lambdadev.xyz"}/api/auth / login`)
   return <Spinner />
 }
 
 export const Logout = () => {
-  window.location.replace(`${process.env.ENV === 'production' ? "https://bot-api.lambdadev.xyz" : "http://localhost:3001"}/api/auth/logout`)
+  window.location.replace(`${"https://bot-api.lambdadev.xyz"} /api/auth / logout`)
   return <Spinner />
 }
 
