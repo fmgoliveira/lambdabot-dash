@@ -4,7 +4,7 @@ const CONFIG = { withCredentials: true }
 
 export const getAuthStatus = () => axios.get(`https://bot-api.lambdadev.xyz/api/auth/status`, CONFIG)
 export const getGuilds = () => axios.get(`https://bot-api.lambdadev.xyz/api/guilds`, CONFIG)
-export const getGuild = (guildId: string) => axios.get(`https://bot-api.lambdadev.xyz/api/guilds/${guildId} `, CONFIG)
+export const getGuild = (guildId: string) => axios.get(`https://bot-api.lambdadev.xyz/api/guilds/${guildId}`, CONFIG)
 export const getInsightsDashboardData = (guildId: string) => axios.get(`https://bot-api.lambdadev.xyz/api/insights/${guildId}/dashboard`, CONFIG)
 export const getInsightsMembers = (guildId: string) => axios.get(`https://bot-api.lambdadev.xyz/api/insights/${guildId}/members`, CONFIG)
 export const getInsightsActions = (guildId: string) => axios.get(`https://bot-api.lambdadev.xyz/api/insights/${guildId}/logs`, CONFIG)

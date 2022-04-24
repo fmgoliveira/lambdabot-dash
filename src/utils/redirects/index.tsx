@@ -39,12 +39,12 @@ export const Policy = () => {
 }
 
 export const Login = () => {
-  window.location.replace(`https://bot-api.lambdadev.xyz/api/auth / login`)
+  window.location.replace(`https://bot-api.lambdadev.xyz/api/auth/login`)
   return <Spinner />
 }
 
 export const Logout = () => {
-  window.location.replace(`https://bot-api.lambdadev.xyz /api/auth / logout`)
+  window.location.replace(`https://bot-api.lambdadev.xyz/api/auth/logout`)
   return <Spinner />
 }
 
