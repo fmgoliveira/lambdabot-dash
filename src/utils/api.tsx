@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CONFIG = { withCredentials: true}
+const CONFIG = { withCredentials: true, headers: { 'Access-Control-Allow-Origin': '*' } }gi
 
 export const getAuthStatus = () => axios.get(`https://bot-api.lambdadev.xyz/api/auth/status`, CONFIG)
 export const getGuilds = () => axios.get(`https://bot-api.lambdadev.xyz/api/guilds`, CONFIG)
