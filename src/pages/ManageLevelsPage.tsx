@@ -43,24 +43,6 @@ export const ManageLevelsPage = ({ user }: { user: User }) => {
     { value: 3, label: '3x' },
   ]
 
-  const [verificationEnabled, setVerificationEnabled] = useState()
-  const [verificationMessage, setVerificationMessage] = useState()
-  const [verificationButtonLabel, setVerificationButtonLabel] = useState()
-  const [verificationEmbed, setVerificationEmbed] = useState()
-  const [verificationEmbedTitle, setVerificationEmbedTitle] = useState()
-  const [verificationEmbedTitleUrl, setVerificationEmbedTitleUrl] = useState()
-  const [verificationEmbedDescription, setVerificationEmbedDescription] = useState()
-  const [verificationEmbedColor, setVerificationEmbedColor] = useState()
-  const [verificationEmbedThumbnail, setVerificationEmbedThumbnail] = useState()
-  const [verificationEmbedImage, setVerificationEmbedImage] = useState()
-  const [verificationEmbedFooterText, setVerificationEmbedFooterText] = useState()
-  const [verificationEmbedFooterIcon, setVerificationEmbedFooterIcon] = useState()
-  const [verificationEmbedAuthorName, setVerificationEmbedAuthorName] = useState()
-  const [verificationEmbedAuthorIcon, setVerificationEmbedAuthorIcon] = useState()
-  const [verificationEmbedAuthorUrl, setVerificationEmbedAuthorUrl] = useState()
-  const [verificationEmbedTimestamp, setVerificationEmbedTimestamp] = useState()
-  const [verifyCommand, setVerificationCommand] = useState()
-
   if (loading || loading2 || loading3 || !data) return <Spinner />
 
   if (!guildId) {
@@ -109,82 +91,6 @@ export const ManageLevelsPage = ({ user }: { user: User }) => {
         data.commands.setXp = checked
         setSetXpCommand(value)
         postModuleSettings(guildId, 'levels', data, Store)
-        break
-
-      case "verificationEnabled":
-        data.settings.enabled = checked
-        setVerificationEnabled(checked)
-        postModuleSettings(guildId, 'verification', data, Store)
-        break
-
-      case 'verificationButtonLabel':
-        data.settings.buttonLabel = value
-        setVerificationButtonLabel(value)
-        break
-
-      case 'verificationMessage':
-        data.settings.message = value
-        setVerificationMessage(value)
-        break
-
-      case 'verificationEmbed':
-        data.settings.embed.enabled = checked
-        setVerificationEmbed(checked)
-        postModuleSettings(guildId, 'verification', data, Store)
-        break
-      case 'verificationEmbedTitle':
-        data.settings.embed.title = value
-        setVerificationEmbedTitle(value)
-        break
-      case 'verificationEmbedTitleUrl':
-        data.settings.embed.titleUrl = value
-        setVerificationEmbedTitleUrl(value)
-        break
-      case 'verificationEmbedDescription':
-        data.settings.embed.description = value
-        setVerificationEmbedDescription(value)
-        break
-      case 'verificationEmbedColor':
-        data.settings.embed.color = value
-        setVerificationEmbedColor(value)
-        break
-      case 'verificationEmbedThumbnail':
-        data.settings.embed.thumbnail = value
-        setVerificationEmbedThumbnail(value)
-        break
-      case 'verificationEmbedImage':
-        data.settings.embed.image = value
-        setVerificationEmbedImage(value)
-        break
-      case 'verificationEmbedFooterText':
-        data.settings.embed.footer.text = value
-        setVerificationEmbedFooterText(value)
-        break
-      case 'verificationEmbedFooterIcon':
-        data.settings.embed.footer.icon = value
-        setVerificationEmbedFooterIcon(value)
-        break
-      case 'verificationEmbedAuthorName':
-        data.settings.embed.author.name = value
-        setVerificationEmbedAuthorName(value)
-        break
-      case 'verificationEmbedAuthorIcon':
-        data.settings.embed.author.icon = value
-        setVerificationEmbedAuthorIcon(value)
-        break
-      case 'verificationEmbedAuthorUrl':
-        data.settings.embed.author.url = value
-        setVerificationEmbedAuthorUrl(value)
-        break
-      case 'verificationEmbedTimestamp':
-        data.settings.embed.timestamp = checked
-        setVerificationEmbedTimestamp(checked)
-        break
-
-      case 'verifyCommand':
-        data.settings.command.verify = checked
-        setVerificationCommand(checked)
-        postModuleSettings(guildId, 'verification', data, Store)
         break
 
       case 'roleRewardsObjLevel':
@@ -736,7 +642,7 @@ export const ManageLevelsPage = ({ user }: { user: User }) => {
                   id="noXpChannels"
                   options={channels?.map(c => ({ value: c.id, label: '#' + c.name }))}
                   className='channel-role-select text-sm'
-                  onChange={handleNoXpRolesSelectChange}
+                  onChange={handleNoXpChannelsSelectChange}
                   placeholder="Select Channels"
                   styles={{
                     option: (provided: any, state: any) => ({
