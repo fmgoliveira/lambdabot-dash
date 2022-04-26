@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CONFIG = { headers: { 'Access-Control-Allow-Origin': 'https://bot-beta.lambdadev.xyz/' } }
+const CONFIG = { headers: { 'Access-Control-Allow-Origin': 'https://bot-beta.lambdadev.xyz' } }
 
 export const getAuthStatus = () => axios.get(`https://bot-api.lambdadev.xyz/api/auth/status`, CONFIG)
 export const getGuilds = () => axios.get(`https://bot-api.lambdadev.xyz/api/guilds`, CONFIG)
